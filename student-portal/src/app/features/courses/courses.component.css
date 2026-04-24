@@ -1,0 +1,232 @@
+.courses-page {
+  padding: 24px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.page-header h2 {
+  margin: 0;
+}
+
+.btn-add {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-add:hover {
+  background: #219a52;
+}
+
+.add-form {
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.add-form h3 {
+  margin: 0 0 14px;
+  color: #2c3e50;
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.form-row input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-row input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.form-row button {
+  padding: 8px 20px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.search-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.controls select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background: white;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.course-card {
+  background: white;
+  border-radius: 6px;
+  padding: 18px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.category-tag {
+  font-size: 11px;
+  background: #eaf4fb;
+  color: #3498db;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.enrolled-tag {
+  font-size: 11px;
+  background: #eafaf1;
+  color: #27ae60;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.course-card h4 {
+  margin: 0 0 12px;
+  color: #2c3e50;
+  font-size: 15px;
+}
+
+.progress-bar {
+  background: #ecf0f1;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #3498db;
+}
+
+.progress-label {
+  font-size: 12px;
+  color: #777;
+  margin: 0 0 14px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.card-actions button {
+  flex: 1;
+  padding: 8px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.card-actions button:hover {
+  background: #2980b9;
+}
+
+.enrolled-btn {
+  background: #95a5a6 !important;
+  cursor: default !important;
+}
+
+.btn-delete {
+  background: #e74c3c !important;
+}
+
+.btn-delete:hover {
+  background: #c0392b !important;
+}
+
+.btn-show-all {
+  padding: 8px 14px;
+  background: #7f8c8d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.btn-show-all:hover {
+  background: #6c7a7d;
+}
+
+.no-result {
+  color: #999;
+  font-size: 14px;
+}
+
+.pagination {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pagination button.active {
+  background: #3498db;
+  color: white;
+  border-color: #3498db;
+}
+
+.pagination button:hover:not(.active) {
+  background: #f0f0f0;
+}

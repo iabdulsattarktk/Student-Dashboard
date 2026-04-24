@@ -1,0 +1,73 @@
+<div class="courses-page">
+  <div class="page-header">
+    <h2>Courses</h2>
+    <button class="btn-add" (click)="showAddForm = !showAddForm">
+      {{ showAddForm ? 'Cancel' : '+ Add Course' }}
+    </button>
+  </div>
+
+  <!-- Add Course Form -->
+  <div class="add-form" *ngIf="showAddForm">
+    <h3>Add New Course</h3>
+    <div class="form-row">
+      <input type="text" [(ngModel)]="newCourseName" placeholder="Course name">
+      <input type="text" [(ngModel)]="newCourseCategory" placeholder="Category (e.g. Frontend)">
+      <button (click)="addCourse()">Save</button>
+    </div>
+  </div>
+
+  <!-- Search and Sort -->
+  <div class="controls">
+    <input
+      type="text"
+      [(ngModel)]="searchText"
+      (ngModelChange)="onSearchChange()"
+      placeholder="Search courses..."
+      class="search-input">
+
+    <button class="btn-show-all" (click)="showAll()">Show All</button>
+
+    <select [(ngModel)]="sortField">
+      <option value="name">Sort by Name</option>
+      <option value="progress">Sort by Progress</option>
+      <option value="category">Sort by Category</option>
+    </select>
+
+    <select [(ngModel)]="sortOrder">
+      <option value="asc">Ascending</option>
+      <option value="desc">Descending</option>
+    </select>
+  </div>
+
+  <!-- Course Cards -->
+  <div class="course-grid">
+    <div class="course-card" *ngFor="let course of paginatedCourses">
+      <div class="card-top">
+        <span class="category-tag">{{ course.category }}</span>
+        <span class="enrolled-tag" *ngIf="course.enrolled">Enrolled</span>
+      </div>
+      <h4>{{ course.name }}</h4>
+      <div class="progress-bar">
+        <div class="progress-fill" [style.width.%]="course.progress"></div>
+      </div>
+      <p class="progress-label">Progress: {{ course.progress }}%</p>
+      <div class="card-actions">
+        <button *ngIf="!course.enrolled" (click)="enroll(course)">Enroll</button>
+        <button *ngIf="course.enrolled" disabled class="enrolled-btn">Enrolled</button>
+        <button class="btn-delete" (click)="deleteCourse(course)">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <p *ngIf="filteredCourses.length === 0" class="no-result">No courses found.</p>
+
+  <!-- Pagination -->
+  <div class="pagination" *ngIf="totalPages > 1">
+    <button
+      *ngFor="let page of pages"
+      [class.active]="page === currentPage"
+      (click)="goToPage(page)">
+      {{ page }}
+    </button>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="app-wrapper">
+  <nav class="navbar" *ngIf="authService.isLoggedIn()">
+    <div class="nav-brand">Student Portal</div>
+    <div class="nav-links">
+      <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+      <a routerLink="/courses" routerLinkActive="active">Courses</a>
+      <a routerLink="/profile" routerLinkActive="active">Profile</a>
+    </div>
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </nav>
+
+  <div class="page-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

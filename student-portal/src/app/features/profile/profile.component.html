@@ -1,0 +1,26 @@
+<div class="profile-page">
+  <h2>Student Profile</h2>
+
+  <div class="profile-card">
+    <div class="avatar">{{ username.charAt(0).toUpperCase() }}</div>
+    <div class="info">
+      <h3>{{ username }}</h3>
+      <p>Department: Computer Science</p>
+      <p>Role: Student</p>
+    </div>
+  </div>
+
+  <h3>Enrolled Courses</h3>
+
+  <div *ngIf="enrolledCourses.length === 0" class="empty">
+    <p>You have not enrolled in any courses yet.</p>
+  </div>
+
+  <div class="enrolled-list">
+    <div class="enrolled-item" *ngFor="let course of enrolledCourses">
+      <span>{{ course.name }}</span>
+      <span class="cat">{{ course.category }}</span>
+      <span class="prog">{{ course.progress }}%</span>
+    </div>
+  </div>
+</div>

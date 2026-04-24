@@ -1,0 +1,65 @@
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background: #2c3e50;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  height: 54px;
+  gap: 24px;
+}
+
+.nav-brand {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  margin-right: 16px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.nav-links a {
+  color: #bdc3c7;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+.nav-links a.active {
+  background: #3498db;
+  color: white;
+}
+
+.logout-btn {
+  background: transparent;
+  border: 1px solid #7f8c8d;
+  color: #bdc3c7;
+  padding: 5px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.logout-btn:hover {
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+.page-content {
+  flex: 1;
+  background: #f0f2f5;
+}

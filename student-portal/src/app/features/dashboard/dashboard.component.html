@@ -1,0 +1,32 @@
+<div class="dashboard">
+  <h2>Student Dashboard</h2>
+
+  <div class="stats">
+    <div class="stat-card">
+      <h3>{{ totalCourses }}</h3>
+      <p>Total Courses</p>
+    </div>
+    <div class="stat-card">
+      <h3>{{ enrolledCount }}</h3>
+      <p>Enrolled</p>
+    </div>
+    <div class="stat-card">
+      <h3>{{ avgProgress }}%</h3>
+      <p>Avg Progress</p>
+    </div>
+  </div>
+
+  <h3>Your Courses</h3>
+  <div class="course-list">
+    <div class="course-item" *ngFor="let course of courses">
+      <div class="course-name">{{ course.name | uppercase }}</div>
+      <div class="progress-bar">
+        <div class="progress-fill" [style.width.%]="course.progress"></div>
+      </div>
+      <span class="progress-text">{{ course.progress }}%</span>
+      <span class="badge" *ngIf="course.enrolled">Enrolled</span>
+    </div>
+  </div>
+
+  <a routerLink="/courses" class="btn-link">Go to Courses</a>
+</div>
